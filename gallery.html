@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Morticia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><em>Morticia</em></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About Her</a></li>
+    <li><a href="stories.html">Stories</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="scrapbook.html">Scrapbook</a></li>
+  </ul>
+</nav>
+
+<div style="padding-top: var(--nav-h);"></div>
+
+<section class="section" style="padding-top: 5rem;">
+  <span class="section-label">In pictures</span>
+  <h1 class="section-title"><em>Glimpses</em> of her</h1>
+  <p style="color: var(--muted); max-width: 500px; margin-top: 1rem;">
+    Add photos over time. Click any image to view it larger.
+  </p>
+
+  <!-- ── ALBUM: Getting Started ── -->
+  <div style="margin-top: 3.5rem;">
+    <div class="section-label" style="margin-bottom: 1.25rem;">2021 — She arrived</div>
+    <div class="gallery-grid">
+
+      <!--
+      ══════════════════════════════════════════════
+      TO ADD A PHOTO:
+      1. Upload the image to assets/photos/
+      2. Copy one of the gallery-item blocks below
+      3. Replace the src with your image filename
+      ══════════════════════════════════════════════
+
+      <div class="gallery-item fade-in">
+        <img src="assets/photos/YOUR-PHOTO.jpg" alt="Short description" />
+      </div>
+      -->
+
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ALBUM: 2022–2024 ── -->
+  <div style="margin-top: 3rem;">
+    <div class="section-label" style="margin-bottom: 1.25rem;">2022–2024 — The good years</div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ALBUM: 2025–2026 ── -->
+  <div style="margin-top: 3rem;">
+    <div class="section-label" style="margin-bottom: 1.25rem;">2025–2026 — Last chapters</div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+      <div class="gallery-item fade-in">
+        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="upload-cta fade-in">
+    <div class="icon">📁</div>
+    <p>To add photos: upload them to <strong>assets/photos/</strong> in your GitHub repo,<br />then add an <strong>&lt;img&gt;</strong> tag in this file. Ask Claude to help if needed.</p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">×</button>
+  <img src="" alt="Enlarged photo" />
+</div>
+
+<footer>
+  <p>Made with love for <strong>Morticia</strong> &nbsp;🖤&nbsp; 2021 – 2026</p>
+  <p style="margin-top:0.5rem; font-size:0.78rem;">Good girls live forever.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

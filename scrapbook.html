@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrapbook — Morticia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><em>Morticia</em></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About Her</a></li>
+    <li><a href="stories.html">Stories</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="scrapbook.html">Scrapbook</a></li>
+  </ul>
+</nav>
+
+<div style="padding-top: var(--nav-h);"></div>
+
+<section class="section" style="padding-top: 5rem;">
+  <span class="section-label">Doodles, sketches & keepsakes</span>
+  <h1 class="section-title">The <em>scrapbook</em></h1>
+  <p style="color: var(--muted); max-width: 540px; margin-top: 1rem;">
+    Scan a doodle. Photograph a note. Upload a collage. Anything physical that deserves to live here.
+  </p>
+
+  <div class="scrapbook-grid" style="margin-top: 3rem;">
+
+    <!--
+    ══════════════════════════════════════════════
+    TO ADD A SCRAPBOOK ITEM:
+
+    1. Scan/photograph your doodle, note, or collage
+    2. Upload to assets/doodles/
+    3. Copy and fill in this block:
+
+    <div class="scrapbook-item fade-in">
+      <img src="assets/doodles/YOUR-FILE.jpg" alt="Description" class="scrapbook-img" />
+      <div class="scrapbook-caption">Your handwritten-style caption here</div>
+    </div>
+    ══════════════════════════════════════════════
+    -->
+
+    <!-- Placeholder items -->
+    <div class="scrapbook-item fade-in">
+      <div class="scrapbook-img" style="height: 200px; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2; background:var(--warm-dark);">
+        🎨
+      </div>
+      <div class="scrapbook-caption">A doodle of Morticia — coming soon</div>
+    </div>
+
+    <div class="scrapbook-item fade-in">
+      <div class="scrapbook-img" style="height: 200px; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2; background:var(--warm-dark);">
+        📝
+      </div>
+      <div class="scrapbook-caption">A note or letter — when you're ready to write it</div>
+    </div>
+
+    <div class="scrapbook-item fade-in">
+      <div class="scrapbook-img" style="height: 200px; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2; background:var(--warm-dark);">
+        🏷️
+      </div>
+      <div class="scrapbook-caption">Her collar tag, a paw print, a favourite toy</div>
+    </div>
+
+  </div>
+
+  <div class="upload-cta fade-in">
+    <div class="icon">✏️</div>
+    <p>
+      To add something here: photograph or scan it → upload to <strong>assets/doodles/</strong> →
+      add a <strong>&lt;div class="scrapbook-item"&gt;</strong> block in this file.<br />
+      Ask Claude to convert voice memos or bullet points into written pieces you can add to stories.
+    </p>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="section" style="padding-top: 1rem;">
+  <span class="section-label">Moving pictures</span>
+  <h2 class="section-title"><em>Videos</em></h2>
+  <p style="color: var(--muted); max-width: 500px; margin-top: 1rem; margin-bottom: 2.5rem;">
+    Upload short clips to Google Drive (set to "anyone with link can view"), then embed them here.
+  </p>
+
+  <!--
+  TO EMBED A GOOGLE DRIVE VIDEO:
+  1. Upload to Google Drive
+  2. Right-click → Share → Anyone with link → Copy link
+  3. Get the file ID from the URL (the long string between /d/ and /view)
+  4. Replace FILE_ID below with that ID:
+
+  <div style="position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden; border:1px solid var(--border); margin-bottom:2rem;">
+    <iframe
+      src="https://drive.google.com/file/d/FILE_ID/preview"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+      allow="autoplay"
+    ></iframe>
+  </div>
+  -->
+
+  <div style="background: var(--card); border: 1px dashed var(--border-hover); border-radius:16px; padding:2.5rem; text-align:center; color:var(--muted); font-size:0.9rem;">
+    🎬 &nbsp; Videos will appear here — embed from Google Drive using the instructions in the code comments.
+  </div>
+</section>
+
+<footer>
+  <p>Made with love for <strong>Morticia</strong> &nbsp;🖤&nbsp; 2021 – 2026</p>
+  <p style="margin-top:0.5rem; font-size:0.78rem;">Good girls live forever.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
