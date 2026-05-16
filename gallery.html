@@ -5,6 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — Morticia</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .year-block { margin-top: 4rem; }
+    .year-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .year-heading em { font-style: italic; color: var(--rose); }
+    .album-block { margin-bottom: 3rem; }
+    .album-heading {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .album-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .gallery-caption {
+      text-align: center;
+      margin-top: 0.4rem;
+      font-family: 'Caveat', cursive;
+      font-size: 0.95rem;
+      color: var(--ink-faint);
+    }
+    .gallery-item-wrap { display: flex; flex-direction: column; }
+    .loading {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--ink-soft);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    .empty-album {
+      background: var(--page-warm);
+      border: 1px dashed var(--border-hover);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--ink-faint);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -24,79 +78,14 @@
 <section class="section" style="padding-top: 5rem;">
   <span class="section-label">In pictures</span>
   <h1 class="section-title"><em>Glimpses</em> of her</h1>
-  <p style="color: var(--muted); max-width: 500px; margin-top: 1rem;">
-    Add photos over time. Click any image to view it larger.
+  <p style="color: var(--ink-soft); max-width: 500px; margin-top: 1rem;">
+    Organised by year and moment. Click any photo to view it larger.
   </p>
-
-  <!-- ── ALBUM: Getting Started ── -->
-  <div style="margin-top: 3.5rem;">
-    <div class="section-label" style="margin-bottom: 1.25rem;">2021 — She arrived</div>
-    <div class="gallery-grid">
-
-      <!--
-      ══════════════════════════════════════════════
-      TO ADD A PHOTO:
-      1. Upload the image to assets/photos/
-      2. Copy one of the gallery-item blocks below
-      3. Replace the src with your image filename
-      ══════════════════════════════════════════════
-
-      <div class="gallery-item fade-in">
-        <img src="assets/photos/YOUR-PHOTO.jpg" alt="Short description" />
-      </div>
-      -->
-
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── ALBUM: 2022–2024 ── -->
-  <div style="margin-top: 3rem;">
-    <div class="section-label" style="margin-bottom: 1.25rem;">2022–2024 — The good years</div>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── ALBUM: 2025–2026 ── -->
-  <div style="margin-top: 3rem;">
-    <div class="section-label" style="margin-bottom: 1.25rem;">2025–2026 — Last chapters</div>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-placeholder">📸<p>Add photo here</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="upload-cta fade-in">
-    <div class="icon">📁</div>
-    <p>To add photos: upload them to <strong>assets/photos/</strong> in your GitHub repo,<br />then add an <strong>&lt;img&gt;</strong> tag in this file. Ask Claude to help if needed.</p>
+  <div id="gallery-root">
+    <div class="loading">Loading her memories...</div>
   </div>
 </section>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" aria-label="Close">×</button>
   <img src="" alt="Enlarged photo" />
@@ -108,5 +97,54 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+async function buildGallery() {
+  const root = document.getElementById('gallery-root');
+  let data;
+  try {
+    const res = await fetch('gallery-data.json?v=' + Date.now());
+    if (!res.ok) throw new Error('Not found');
+    data = await res.json();
+  } catch (e) {
+    root.innerHTML = '<div class="empty-album" style="margin-top:2rem;">📁 &nbsp; <strong>gallery-data.json</strong> not found. Upload it to the root of your repo to start building the gallery.</div>';
+    return;
+  }
+
+  let html = '';
+  for (const yearObj of data.years) {
+    html += `<div class="year-block fade-in"><div class="year-heading"><em>${yearObj.year}</em></div>`;
+    for (const album of yearObj.albums) {
+      html += `<div class="album-block"><div class="album-heading">${album.name}</div>`;
+      if (!album.photos || album.photos.length === 0) {
+        html += `<div class="empty-album">No photos added yet.</div>`;
+      } else {
+        html += `<div class="gallery-grid">`;
+        for (const photo of album.photos) {
+          const src = `assets/photos/${yearObj.year}/${album.folder}/${photo.file}`;
+          const cap = photo.caption || '';
+          html += `<div class="gallery-item-wrap"><div class="gallery-item fade-in"><img src="${src}" alt="${cap}" loading="lazy" /></div>${cap ? `<div class="gallery-caption">${cap}</div>` : ''}</div>`;
+        }
+        html += `</div>`;
+      }
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+  root.innerHTML = html;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.05 });
+  root.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  root.querySelectorAll('.gallery-item img').forEach(img => {
+    img.parentElement.style.cursor = 'pointer';
+    img.parentElement.addEventListener('click', () => { lbImg.src = img.src; lb.classList.add('open'); });
+  });
+}
+buildGallery();
+</script>
 </body>
 </html>

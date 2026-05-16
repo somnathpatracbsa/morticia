@@ -1,0 +1,65 @@
+{
+  "years": [
+    {
+      "year": "2021",
+      "albums": [
+        {
+          "name": "Home — She arrived",
+          "folder": "home",
+          "photos": [
+            { "file": "day-one.jpg", "caption": "First hour home" },
+            { "file": "couch-claim.jpg", "caption": "Claimed the couch immediately" }
+          ]
+        },
+        {
+          "name": "Ooty Trip",
+          "folder": "ooty",
+          "photos": [
+            { "file": "ooty-1.jpg", "caption": "Cool mountain air" },
+            { "file": "ooty-2.jpg", "caption": "She loved the cold" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "albums": [
+        {
+          "name": "Everyday Morticia",
+          "folder": "everyday",
+          "photos": []
+        }
+      ]
+    },
+    {
+      "year": "2023",
+      "albums": [
+        {
+          "name": "Everyday Morticia",
+          "folder": "everyday",
+          "photos": []
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "albums": [
+        {
+          "name": "Everyday Morticia",
+          "folder": "everyday",
+          "photos": []
+        }
+      ]
+    },
+    {
+      "year": "2025",
+      "albums": [
+        {
+          "name": "Everyday Morticia",
+          "folder": "everyday",
+          "photos": []
+        }
+      ]
+    }
+  ]
+}
