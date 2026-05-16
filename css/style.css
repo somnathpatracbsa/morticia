@@ -60,7 +60,7 @@ nav {
   letter-spacing: 0.04em;
 }
 
-.nav-logo em { font-style: italic; color: var(--rose); }
+.nav-logo em { font-style: italic; color: var(--ink); }
 
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 
@@ -73,7 +73,7 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a:hover, .nav-links a.active { color: var(--rose); }
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
 
 /* HERO */
 .hero {
