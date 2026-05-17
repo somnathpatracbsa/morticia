@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo"><em>Morticia</em></a>
   <ul class="nav-links">
@@ -19,19 +18,15 @@
   </ul>
 </nav>
 
-<div style="padding-top: var(--nav-h);"></div>
+<section class="stories-section" style="min-height:100vh; padding-top: calc(var(--nav-h) + 4rem);">
+  <div class="stories-header">
+    <div style="font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--red); margin-bottom:0.75rem;">All memories</div>
+    <h1 class="stories-big-heading">Her <em>stories</em></h1>
+    <p class="stories-sub">Written slowly. Added over time. Each one a way of keeping her close.</p>
+  </div>
 
-<section class="section" style="padding-top: 5rem;">
-  <span class="section-label">All memories</span>
-  <h1 class="section-title">Her <em>stories</em></h1>
-  <p style="color: var(--muted); max-width: 500px; margin-top: 1rem;">
-    Written slowly. Added over time. Each one a way of keeping her close.
-  </p>
-
-  <div class="stories-grid" style="margin-top: 3rem;">
-
-    <!-- STORY 1 -->
-    <a href="stories/first-day.html" class="story-card fade-in">
+  <div class="stories-cards">
+    <a href="stories/first-day.html" class="story-card">
       <div class="story-card-img">
         <!-- <img src="assets/photos/first-day.jpg" alt="First day" /> -->
         <div class="story-card-img-placeholder">🏠</div>
@@ -40,53 +35,40 @@
         <div class="story-card-date">June 2021</div>
         <div class="story-card-title">The Day She Walked In</div>
         <div class="story-card-excerpt">She sniffed every corner, claimed the couch, and by nightfall had decided this was home.</div>
-        <div class="story-card-cta">Read →</div>
+        <span class="story-card-cta">Read →</span>
       </div>
     </a>
 
     <!--
-    ══════════════════════════════════════════════
-    TO ADD A NEW STORY:
-
-    1. Copy the block below (between the dashes)
-    2. Create a new file in stories/ folder
-    3. Update the href, date, title, excerpt
-    4. Add a photo if you have one
-    ══════════════════════════════════════════════
-
-    <a href="stories/YOUR-STORY-FILE.html" class="story-card fade-in">
+    TO ADD A STORY — copy this block and fill in:
+    <a href="stories/YOUR-FILE.html" class="story-card">
       <div class="story-card-img">
-        <img src="assets/photos/YOUR-PHOTO.jpg" alt="Description" />
+        <img src="assets/photos/YOUR-PHOTO.jpg" alt="..." />
       </div>
       <div class="story-card-body">
         <div class="story-card-date">Month Year</div>
         <div class="story-card-title">Story Title</div>
-        <div class="story-card-excerpt">A sentence or two about this memory.</div>
-        <div class="story-card-cta">Read →</div>
+        <div class="story-card-excerpt">A sentence or two.</div>
+        <span class="story-card-cta">Read →</span>
       </div>
     </a>
     -->
 
-    <!-- Placeholder -->
-    <div class="story-card fade-in" style="opacity:0.35; pointer-events:none;">
-      <div class="story-card-img">
-        <div class="story-card-img-placeholder">✍️</div>
-      </div>
+    <div class="story-card" style="opacity:0.3; pointer-events:none;">
+      <div class="story-card-img"><div class="story-card-img-placeholder">✍️</div></div>
       <div class="story-card-body">
         <div class="story-card-date">Your story</div>
         <div class="story-card-title">A memory to add</div>
-        <div class="story-card-excerpt">Write it down when you're ready. There's no rush.</div>
+        <div class="story-card-excerpt">Write it when you're ready.</div>
       </div>
     </div>
-
   </div>
 </section>
 
 <footer>
-  <p>Made with love for <strong>Morticia</strong> &nbsp;🖤&nbsp; 2021 – 2026</p>
-  <p style="margin-top:0.5rem; font-size:0.78rem;">Good girls live forever.</p>
+  <p style="font-size:0.95rem; margin-bottom:0.4rem;">Made with love for <strong>Morticia</strong> &nbsp;🖤&nbsp; 2021 – 2026</p>
+  <p>Good girls live forever.</p>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo"><em>Morticia</em></a>
   <ul class="nav-links">
@@ -19,77 +18,57 @@
   </ul>
 </nav>
 
-<div style="padding-top: var(--nav-h);"></div>
+<section class="timeline-section" style="min-height: 100vh; padding-top: calc(var(--nav-h) + 4rem);">
+  <div class="timeline-inner">
+    <h1 class="timeline-heading">Her <em>timeline</em></h1>
+    <div class="timeline">
 
-<section class="section" style="padding-top: 5rem; max-width: 760px;">
-  <span class="section-label">Her life in moments</span>
-  <h1 class="section-title">The <em>timeline</em></h1>
-  <p style="color: var(--muted); max-width: 500px; margin-top: 1rem;">
-    Add milestones as you remember them. Big ones, small ones. They all count.
-  </p>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot" style="background:rgba(245,240,232,0.15); box-shadow:none;"></div>
+        <div class="timeline-year">~2011</div>
+        <div class="timeline-event">Morticia is born</div>
+        <div class="timeline-desc">Somewhere in India, a black lab puppy comes into the world with no idea of the life ahead of her.</div>
+      </div>
 
-  <div class="timeline" style="margin-top: 4rem;">
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2 June 2021</div>
+        <div class="timeline-event">She comes home 🏠</div>
+        <div class="timeline-desc">Adopted at ~10 years old. She walks through the door and begins her chapter with us.</div>
+      </div>
 
-    <!-- ── BEFORE US ── -->
-    <div class="timeline-item fade-in">
-      <div class="timeline-dot" style="background: var(--faint); box-shadow: none;"></div>
-      <div class="timeline-year">~2011</div>
-      <div class="timeline-event">Morticia is born</div>
-      <div class="timeline-desc">Somewhere in India, a black lab puppy comes into the world with no idea of the life ahead of her.</div>
+      <!--
+      ADD MORE MILESTONES — copy this block:
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Month Year</div>
+        <div class="timeline-event">Event name</div>
+        <div class="timeline-desc">A sentence about this moment.</div>
+      </div>
+      -->
+
+      <div class="timeline-item fade-in" style="opacity:0.3;">
+        <div class="timeline-dot" style="background:rgba(245,240,232,0.1); box-shadow:none;"></div>
+        <div class="timeline-year">Add a milestone</div>
+        <div class="timeline-event">Your memory here</div>
+        <div class="timeline-desc">First car ride, favourite park, a vet visit, a holiday — all count.</div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot" style="background:#d63a2a; box-shadow: 0 0 0 3px rgba(214,58,42,0.25);"></div>
+        <div class="timeline-year">4 March 2026</div>
+        <div class="timeline-event">She goes 🖤</div>
+        <div class="timeline-desc">After ~15 years of a life fully lived. She is not gone — she is here, in every story on this page.</div>
+      </div>
+
     </div>
-
-    <!-- ── WITH US ── -->
-    <div class="timeline-item fade-in">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">2 June 2021</div>
-      <div class="timeline-event">She comes home 🏠</div>
-      <div class="timeline-desc">Adopted at ~10 years old. She walks through the door and begins her chapter with us.</div>
-    </div>
-
-    <!--
-    ══════════════════════════════════════════════
-    ADD MORE MILESTONES HERE. Copy this block:
-
-    <div class="timeline-item fade-in">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">Month Year</div>
-      <div class="timeline-event">Event name</div>
-      <div class="timeline-desc">A sentence or two about what happened.</div>
-    </div>
-
-    Ideas to add:
-    - First car ride
-    - Favourite beach or park discovered
-    - First time she slept on the bed
-    - A vet visit you remember
-    - A holiday she came on
-    - The last walk
-    ══════════════════════════════════════════════
-    -->
-
-    <div class="timeline-item fade-in" style="opacity:0.35;">
-      <div class="timeline-dot" style="background: var(--faint); box-shadow:none;"></div>
-      <div class="timeline-year">Add a milestone</div>
-      <div class="timeline-event">Your memory here</div>
-      <div class="timeline-desc">Edit timeline.html to add more moments from her life with you.</div>
-    </div>
-
-    <!-- ── LAST ── -->
-    <div class="timeline-item fade-in">
-      <div class="timeline-dot" style="background: var(--coral); box-shadow: 0 0 12px rgba(224,92,58,0.4);"></div>
-      <div class="timeline-year">4 March 2026</div>
-      <div class="timeline-event">She goes</div>
-      <div class="timeline-desc">Morticia passes away after ~15 years of a life fully lived. She is not gone — she is here, in every story on this page.</div>
-    </div>
-
   </div>
 </section>
 
 <footer>
-  <p>Made with love for <strong>Morticia</strong> &nbsp;🖤&nbsp; 2021 – 2026</p>
-  <p style="margin-top:0.5rem; font-size:0.78rem;">Good girls live forever.</p>
+  <p style="font-size:0.95rem; margin-bottom:0.4rem;">Made with love for <strong>Morticia</strong> &nbsp;🖤&nbsp; 2021 – 2026</p>
+  <p>Good girls live forever.</p>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>
